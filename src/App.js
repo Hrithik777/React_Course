@@ -5,7 +5,7 @@ import Navbar from './components/Navbar.js'
 import TextForm from './components/TextForm.js'
 import Alert from './components/Alert.js' 
 import About from './components/About.js'
-import {BrowserRouter, Routes, Route} from "react-router-dom"
+//import {BrowserRouter, Routes, Route} from "react-router-dom"
 
 function App() {
 
@@ -39,18 +39,19 @@ function App() {
   }
 
   return (
-    <BrowserRouter>
+    // <BrowserRouter>
       <>
         <Navbar title="TextUtils" aboutText="About TextUtils" mode={mode} toggleMode={toggleMode} />
         <Alert alert={alert} />
         <div className="container">
-          <Routes>
-            <Route path="/" element={<TextForm heading="Enter the text to analyze below" mode={mode} defineAlert={defineAlert} />} />
-            <Route path="/about" element={<About />} />
-          </Routes>
+          {/* <Routes> */}
+            {/* <Route path="/" element={<TextForm heading="Enter the text to analyze below" mode={mode} defineAlert={defineAlert} />} /> */}
+            <TextForm heading="Enter the text to analyze below" mode={mode} defineAlert={defineAlert}/>
+            {/* <Route path="/about" element={<About />} /> */}
+          {/* </Routes> */}
         </div>
       </>
-    </BrowserRouter>
+    // </BrowserRouter>
   );
 } 
 

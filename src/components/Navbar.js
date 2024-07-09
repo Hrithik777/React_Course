@@ -1,6 +1,6 @@
 
 import PropTypes from "prop-types"; 
-import {Link} from "react-router-dom"; 
+// import {Link} from "react-router-dom"; 
 
 function Navbar(props) {
     console.log(props);
@@ -8,9 +8,12 @@ function Navbar(props) {
       <>
         <nav className="navbar bg-dark navbar-expand-lg bg-body-tertiary" data-bs-theme={`${props.mode}`}>
           <div className="container-fluid">
-            <Link className={`navbar-brand text-${props.mode === 'light'?'dark':'light'}`} to="/about">
+            {/* <Link className={`navbar-brand text-${props.mode === 'light'?'dark':'light'}`} to="/about">
               {props.title}
-            </Link>
+            </Link> */}
+            <a className={`navbar-brand text-${props.mode === 'light'?'dark':'light'}`} href="/">
+              {props.title}
+            </a>
             <button
               className="navbar-toggler"
               type="button"
@@ -28,14 +31,20 @@ function Navbar(props) {
             >
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item">
-                  <Link className={`nav-link active text-${props.mode === 'light'?'dark':'light'}`} to="/">
+                  {/* <Link className={`nav-link active text-${props.mode === 'light'?'dark':'light'}`} to="/">
                     Home
-                  </Link>
+                  </Link> */}
+                  <a className={`nav-link active text-${props.mode === 'light'?'dark':'light'}`} href="/">
+                    Home
+                  </a>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/about">
+                  {/* <Link className="nav-link" to="/about">
                     {props.aboutText}
-                  </Link>
+                  </Link> */}
+                  <a className="nav-link" href="/about">
+                    {props.aboutText}
+                  </a>
                 </li>
               </ul>
                 <div className={`form-check form-switch text-${props.mode === 'light'?'dark':'light'}`}>
